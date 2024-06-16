@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+body {
+    font-family: Inter;
+    font-weight: 400;
+}
+
+.checkbox {
+    border-radius: 10px;
+    background: #3579f5;
+    color: #fff;
+
+    padding: 12px 18px 25px 22px;
+    width: 743px;
+
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    margin: 100px auto;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+.checkbox__counter {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 50px;
+        height: 50px;
+        background-color: #3579f5;
+        border-radius: 50%;
+        z-index: 1;
+
+    }
+
+    .checkbox__count {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+$completed: 0.2;
+$total: 7;
+$percent-completed: (
+    $completed / $total) * 100%;
+
+
+.checkbox__counter {
+    background: conic-gradient(#fff $percent-completed,
+            #ffffff80 $percent-completed
+    );
+}
+
+
+.checkbox__checklist {
+    display: inline;
+    padding: 2px 10px;
+    border-radius: 40px;
+
+    background: rgb(35, 100, 219);
+
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+
+}
+
+.checkbox__success {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.checkbox__action {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.checkbox__btn {
+    display: inline-block;
+    padding: 10px 32px;
+    border: 1px solid rgb(244, 248, 255);
+
+    border-radius: 6px;
+    border: none;
+
+    background: rgb(244, 248, 255);
+    color: rgb(71, 119, 237);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    cursor: pointer;
+
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        background: rgb(58, 107, 230);
+        color: rgb(244, 248, 255);
+        border-radius: 6px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+}
+
+.checkbox__item-btn {
+    margin-left: auto;
+}
